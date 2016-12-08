@@ -87,7 +87,7 @@ void main()
 		//b = y1 � m*x1
 		//range of X
 		int x1 = 0;
-		int x2 = 640;
+		int x2 = 500;
 		//range of Y (in this case Y represents red component of gradient)
 		//we use float so the calculations are done in float
 		float y1 = 10;
@@ -97,11 +97,15 @@ void main()
 
 		//	int r = 255 * x / 600;
 		int r = m*x + b;
+		int g = (y2*2)/2;
 		//g = b = 0;
 
 		for (int y = 0; y < 480; y++)
 		{
-			al_put_pixel(x, y, al_map_rgb(r, 0, 0));
+			al_put_pixel(x, y, al_map_rgb(r, g, 0));
+			
+			
+				
 		}
 
 		//int y1 = x;
