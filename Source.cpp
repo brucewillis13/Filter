@@ -79,7 +79,7 @@ void main()
 	al_clear_to_color(al_map_rgb(0, 0, 0));
 
 	//doall the drawings
-	for (int x = 0; x < 640; x++)
+	for (int y = 0; y < 480; y++)
 	{
 		//formula for calculating the parameters of a line (y=m*x+b) 
 		//based on two points on that line x1/y1 and x2/y2
@@ -91,16 +91,16 @@ void main()
 		//range of Y (in this case Y represents red component of gradient)
 		//we use float so the calculations are done in float
 		float y1 = 10;
-		float y2 = 200;
+		float y2 = 220;
 		float m = (y2 - y1) / (x2 - x1);
 		float b = y1 - m * x1;
 
 		//	int r = 255 * x / 600;
-		int r = m*x + b;
+		int r = m*y + b;
 		int g = (y2*2)/2;
 		//g = b = 0;
 
-		for (int y = 0; y < 480; y++)
+		for (int x = 0; x < 640; x++)
 		{
 			al_put_pixel(x, y, al_map_rgb(r, g, 0));
 			
